@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/landingPage/Navbar";
-import Vector from "../assets/img/landingPage/vector.svg";
+import Vector from "../assets/img/landingPage/pppp.png";
 import Login from "../components/landingPage/Login";
 import Footer from "../components/landingPage/Footer";
 

@@ -60,7 +60,7 @@ const Contact = (props) => {
                   Address :
                 </h1>
                 <h2 className="font-poppins text-xl">
-                  first floor, stark tower , near wall street, new york{" "}
+                  first floor, stark tower , near wall street, chennai{" "}
                 </h2>
               </div>
             </div>

@@ -140,7 +140,7 @@ export default function Register(props) {
                     : "py-2 px-8 text-lg font-poppins font-semibold cursor-pointer rounded bg-bgsecondary"
                 }
               >
-                Patient
+                Trainee
               </button>
               <button
                 onClick={() => setToggle("Doctor")}
@@ -150,7 +150,7 @@ export default function Register(props) {
                     : "py-2 px-8 text-lg font-poppins font-semibold cursor-pointer rounded bg-bgsecondary"
                 }
               >
-                Doctor
+                Trainer
               </button>
             </div>
             <div
@@ -161,7 +161,7 @@ export default function Register(props) {
               }
             >
               <h1 className="font-bold flex justify-center mt-6">
-                For register as doctor contact to admin with you all information
+                For register as Trainer contact to admin with you all information
               </h1>
               <div className="border-4 p-4 mx-auto w-1/2 rounded-xl mt-8  ">
                 <h1>send your all information</h1>
@@ -231,7 +231,7 @@ export default function Register(props) {
               </div>
               <div className="lg:grid grid-cols-4 gap-2 mt-4 mr-4">
                 <label className="font-bold lg:text-xl px-4 ">
-                  Mobile No.{" "}
+                  Mobile No{" "}
                 </label>
 
                 <input
@@ -250,12 +250,12 @@ export default function Register(props) {
 
               <div className=" aadhar lg:grid grid-cols-4 gap-2 mt-4 mr-4">
                 <label className="font-bold lg:text-xl px-4 ">
-                  Aadhar Card No.{" "}
+                  Project No{" "}
                 </label>
                 <div>
                   <input
                     type="text"
-                    placeholder="Aadhar card No."
+                    placeholder="Project No."
                     required
                     className="pl-4 bg-blue-100 lg:h-10  rounded h-8"
                     value={patient.adharCard}
@@ -288,34 +288,7 @@ export default function Register(props) {
                 ></input>
               </div>
 
-              <div className="grid grid-cols-4 gap-2 mt-4 mr-4">
-                <label className="  lg:text-xl font-bold px-4">
-                  Blood Group
-                </label>
-                <div className="">
-                  <select
-                    className="pl-4 lg:w-1/2 bg-blue-100 lg:h-10  rounded  h-8"
-                    id="blood-group"
-                    value={patient.bloodGroup}
-                    onChange={(e) => {
-                      let temppatient = { ...patient };
-                      temppatient.bloodGroup = e.target.value;
-                      setPatient(temppatient);
-                    }}
-                  >
-                    <option id="select">select</option>
-                    <option id="A+">A+</option>
-                    <option id="A-">A-</option>
-                    <option id="B+">B+</option>
-                    <option id="B-">B-</option>
-                    <option id="AB+">AB+</option>
-                    <option id="AB-">AB-</option>
-                    <option id="O+">O+</option>
-                    <option id="O-">O-</option>
-                  </select>
-                </div>
-              </div>
-
+             
               <div className="grid grid-cols-4 gap-2 mt-4 mr-4 grid-flow-dense ">
                 <label className=" lg:text-xl font-bold px-4 mb-8 col-span-1">
                   Address
@@ -435,7 +408,7 @@ export default function Register(props) {
               <div className="lg:grid lg:grid-cols-10 gap-2 mt-8 mr-4">
                 <div className="col-span-5">
                   <label className=" lg:text-xl font-bold px-4 grid col-start-1 col-span-3">
-                    Name of any permanant disease (if any)
+                    Name of any previous projects (if any)
                   </label>
                 </div>
                 <div className="col-span-4">
@@ -450,7 +423,7 @@ export default function Register(props) {
                           type="text"
                           name="disease"
                           value={disease.disease}
-                          placeholder="eg.dibetes"
+                          placeholder="projects"
                           onChange={(e) => {
                             let diseaseList1 = [...diseaseList];
                             diseaseList1[index].disease = e.target.value;
@@ -464,7 +437,7 @@ export default function Register(props) {
                           className="bg-blue-100 lg:h-10 col-span-3  rounded lg:pl-4 h-8 pl-2 ml-4"
                           type="text"
                           name="yrs"
-                          placeholder="years e.g 3"
+                          placeholder="name"
                           value={disease.yrs}
                           onChange={(e) => {
                             let diseaseList1 = [...diseaseList];
@@ -503,166 +476,13 @@ export default function Register(props) {
             </div>
 
             <div className={Toggle === "Patient" ? "" : "hidden"}>
-              <div className="flex justify-center">
-                <h1 className=" p-4 rounded font-bold lg:text-3xl text-xl mt-2">
-                  Emergency Contact Details
-                </h1>
-              </div>
+              
 
-              <div className="lg:grid grid-cols-4 gap-2 mt-8 mr-4 flex">
-                <label className="font-bold lg:text-xl px-4 ">Name</label>
-                <input
-                  className="bg-blue-100 rounded h-10 pl-4"
-                  placeholder="first name"
-                  value={patient.contactPerson.name.firstName}
-                  onChange={(e) => {
-                    let temppatient = { ...patient };
-                    temppatient.contactPerson.name.firstName = e.target.value;
-                    setPatient(temppatient);
-                  }}
-                ></input>
-                <input
-                  className="bg-blue-100 rounded h-10 pl-4"
-                  placeholder="last name"
-                  value={patient.contactPerson.name.surName}
-                  onChange={(e) => {
-                    let temppatient = { ...patient };
-                    temppatient.contactPerson.name.surName = e.target.value;
-                    setPatient(temppatient);
-                  }}
-                ></input>
-              </div>
-              <div className="lg:grid grid-cols-4 gap-2 mt-4 mr-4">
-                <label className="font-bold lg:text-xl px-4 ">
-                  Mobile No.{" "}
-                </label>
+             
+              
+             
+              
 
-                <input
-                  type="tel"
-                  placeholder="mobile no."
-                  required
-                  className="pl-4 bg-blue-100 lg:h-10  rounded h-8"
-                  value={patient.contactPerson.mobile}
-                  onChange={(e) => {
-                    let temppatient = { ...patient };
-                    temppatient.contactPerson.mobile = e.target.value;
-                    setPatient(temppatient);
-                  }}
-                ></input>
-              </div>
-
-              <div className="lg:grid grid-cols-4 gap-2 mt-4 mr-4">
-                <label className="  lg:text-xl font-bold px-4">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="bg-blue-100 lg:h-10 rounded pl-4 h-8"
-                  value={patient.contactPerson.email}
-                  onChange={(e) => {
-                    let temppatient = { ...patient };
-                    temppatient.contactPerson.email = e.target.value;
-                    setPatient(temppatient);
-                  }}
-                ></input>
-              </div>
-
-              <div className="mt-4">
-                <label className=" rounded p-2 lg:text-xl font-bold px-4">
-                  Relation with patient
-                </label>
-                <input
-                  className="bg-blue-100 lg:h-10 ml-24 rounded pl-4 h-8 lg:mt-0 lg:ml-0 mt-2 "
-                  placeholder="eg. father"
-                  value={patient.contactPerson.relation}
-                  onChange={(e) => {
-                    let temppatient = { ...patient };
-                    temppatient.contactPerson.relation = e.target.value;
-                    setPatient(temppatient);
-                  }}
-                ></input>
-              </div>
-
-              <div className="grid grid-cols-4 gap-2 mt-4 mr-4 grid-flow-dense ">
-                <label className=" lg:text-xl font-bold px-4 mb-8 col-span-1">
-                  Address
-                </label>
-                <div className="grid grid-cols-2 gap-8 col-span-3 ">
-                  <input
-                    type="text"
-                    className="bg-blue-100 h-10  rounded pl-4 "
-                    required
-                    placeholder="building/area"
-                    value={patient.contactPerson.address.building}
-                    onChange={(e) => {
-                      let temppatient = { ...patient };
-                      temppatient.contactPerson.address.building =
-                        e.target.value;
-                      setPatient(temppatient);
-                    }}
-                  ></input>
-                  <input
-                    type="text"
-                    className="bg-blue-100 h-10  rounded pl-4 "
-                    required
-                    placeholder="village/city"
-                    value={patient.contactPerson.address.city}
-                    onChange={(e) => {
-                      let temppatient = { ...patient };
-                      temppatient.contactPerson.address.city = e.target.value;
-                      setPatient(temppatient);
-                    }}
-                  ></input>
-                  <input
-                    type="text"
-                    className="bg-blue-100 h-10  rounded  pl-4"
-                    required
-                    placeholder="Taluka"
-                    value={patient.contactPerson.address.taluka}
-                    onChange={(e) => {
-                      let temppatient = { ...patient };
-                      temppatient.contactPerson.address.taluka = e.target.value;
-                      setPatient(temppatient);
-                    }}
-                  ></input>
-                  <input
-                    type="text"
-                    className="bg-blue-100 h-10  rounded  pl-4"
-                    required
-                    placeholder="District"
-                    value={patient.contactPerson.address.district}
-                    onChange={(e) => {
-                      let temppatient = { ...patient };
-                      temppatient.contactPerson.address.district =
-                        e.target.value;
-                      setPatient(temppatient);
-                    }}
-                  ></input>
-                  <input
-                    type="number"
-                    className="bg-blue-100 h-10  rounded  pl-4"
-                    required
-                    placeholder="Pin-code"
-                    value={patient.contactPerson.address.pincode}
-                    onChange={(e) => {
-                      let temppatient = { ...patient };
-                      temppatient.contactPerson.address.pincode =
-                        e.target.value;
-                      setPatient(temppatient);
-                    }}
-                  ></input>
-                  <input
-                    type="text"
-                    className="bg-blue-100 h-10  rounded  pl-4"
-                    placeholder="State"
-                    value={patient.contactPerson.address.state}
-                    onChange={(e) => {
-                      let temppatient = { ...patient };
-                      temppatient.contactPerson.address.state = e.target.value;
-                      setPatient(temppatient);
-                    }}
-                  ></input>
-                </div>
-              </div>
               <div className="flex justify-center mb-4 mt-8">
                 {Loading ? (
                   <ReactLoading

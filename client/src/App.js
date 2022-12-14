@@ -28,7 +28,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Page404 from "./pages/Page_404";
 
 function App() {
-  const [healthID, setHealthID] = useState("");
+  const [ProjectID, setHealthID] = useState("");
   const [prescriptionID, setPrescriptionID] = useState("");
   const [toastShow, setToastShow] = useState(false);
   const [toastCondition, settoastCondition] = useState({
@@ -158,7 +158,7 @@ function App() {
             path="dashboard"
             element={
               <DoctorDashboard
-                healthID={healthID}
+                healthID={ProjectID}
                 setHealthID={setHealthID}
                 setPrescriptionID={setPrescriptionID}
                 setToastShow={setToastShow}
@@ -170,7 +170,7 @@ function App() {
             path="reports"
             element={
               <PatientReportsDoctorView
-                healthID={healthID}
+                healthID={ProjectID}
                 setPrescriptionID={setPrescriptionID}
                 settoastCondition={settoastCondition}
                 setToastShow={setToastShow}
@@ -181,7 +181,7 @@ function App() {
             path="history"
             element={
               <PatientHistoryDoctorView
-                healthID={healthID}
+                healthID={ProjectID}
                 setPrescriptionID={setPrescriptionID}
                 settoastCondition={settoastCondition}
                 setToastShow={setToastShow}
@@ -192,7 +192,7 @@ function App() {
             path="profile"
             element={
               <DoctorProfile
-                healthID={healthID}
+                healthID={ProjectID}
                 settoastCondition={settoastCondition}
                 setToastShow={setToastShow}
               />
@@ -202,7 +202,7 @@ function App() {
             path="addDiagno"
             element={
               <AddNewDiagnosis
-                healthID={healthID}
+                healthID={ProjectID}
                 setToastShow={setToastShow}
                 settoastCondition={settoastCondition}
               />
@@ -212,7 +212,7 @@ function App() {
             path="prescription"
             element={
               <PreviewPrescriptionDoctorView
-                healthID={healthID}
+                healthID={ProjectID}
                 prescriptionID={prescriptionID}
                 settoastCondition={settoastCondition}
                 setToastShow={setToastShow}

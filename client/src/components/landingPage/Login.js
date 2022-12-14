@@ -29,7 +29,7 @@ export default function Login(props) {
     auth();
   });
 
-  const handlePatientLogin = async (healthID, password) => {
+  const handlePatientLogin = async (ProjectID, password) => {
     setLoading(true);
     const res = await fetch("/login/patient", {
       method: "POST",
@@ -37,7 +37,7 @@ export default function Login(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        healthID,
+        ProjectID,
         password,
       }),
     });
@@ -140,7 +140,7 @@ export default function Login(props) {
             setPasswordError("");
           }}
         >
-          Patient
+          Trainee
         </button>
         <button
           onClick={() => {
@@ -156,7 +156,7 @@ export default function Login(props) {
               : "py-2 px-8 text-lg font-poppins font-medium text-primary cursor-pointer rounded"
           }
         >
-          Doctor
+          Trainer
         </button>
         <button
           onClick={() => {
@@ -185,7 +185,7 @@ export default function Login(props) {
           htmlFor="email"
           className="font-poppins pt-2 pb-1 text-lg font-bold"
         >
-          {Toggle === "Patient" ? "Health Id" : "Email"}
+          {Toggle === "Patient" ? "Project ID" : "Email"}
         </label>
         <input
           type="text"
